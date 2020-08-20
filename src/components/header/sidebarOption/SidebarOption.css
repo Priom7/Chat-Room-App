@@ -4,6 +4,7 @@
   font-size: 12px;
   padding-left: 2px;
   cursor: pointer;
+  margin-right: 5px;
 }
 
 .sidebarOption:hover {

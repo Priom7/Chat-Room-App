@@ -81,10 +81,12 @@ function Sidebar() {
         <hr></hr>
         <SidebarOption
           Icon={AddCircleIcon}
+          addChannelOption
           title='Add Channels'
         ></SidebarOption>
         {Channels.map((channel) => (
           <SidebarOption
+            key={channel.id}
             id={channel.id}
             title={channel.name}
           ></SidebarOption>
