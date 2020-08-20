@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,15 +8,17 @@ import "./App.css";
 import Header from "./components/header/header/Header";
 import Sidebar from "./components/header/sidebar/Sidebar";
 import Chat from "./components/header/chat/Chat";
+import Login from "./components/login/Login";
+import { useStateValue } from "./StateProvider/StateProvider";
 
 function App() {
-  const [user, setUser] = useState("priom");
+  const [{ user }, dispatch] = useStateValue();
 
   return (
     <div className='app'>
       <Router>
         {!user ? (
-          <h1>LOGIN PAGE</h1>
+          <Login></Login>
         ) : (
           <>
             <Header></Header>

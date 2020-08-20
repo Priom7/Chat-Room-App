@@ -14,8 +14,10 @@ import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import db from "../../../firebase/firebase";
+import { useStateValue } from "../../../StateProvider/StateProvider";
 function Sidebar() {
   const [Channels, setChannels] = useState([]);
+  const [{ user }] = useStateValue();
 
   useEffect(() => {
     db.collection("rooms").onSnapshot((snapshot) =>
@@ -35,7 +37,7 @@ function Sidebar() {
           <h2>Chat Room</h2>
           <h3>
             <FiberManualRecordIcon></FiberManualRecordIcon>
-            Md. Sharif Alam
+            {user?.displayName}
           </h3>
         </div>
         <EditIcon></EditIcon>
