@@ -3,6 +3,7 @@
   background-color: #f8f8f8;
   display: grid;
   place-items: center;
+  overflow: scroll;
 }
 
 .login__container {

@@ -3,6 +3,7 @@
   background-color: var(--chatroom-color);
   border-top: 1px solid wheat;
   max-width: 260px;
+  overflow: scroll;
 }
 
 .sidebar > hr {
